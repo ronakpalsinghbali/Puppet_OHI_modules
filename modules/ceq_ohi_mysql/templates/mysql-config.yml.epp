@@ -1,0 +1,19 @@
+<%- |   
+       String $username = '', 
+       Data $password = '', 
+    | -%>
+
+
+integrations:
+  - name: nri-mysql
+    env:
+      HOSTNAME: localhost
+      PORT: 3306
+      USERNAME: <%= $username %>
+      PASSWORD: <%= $password %>
+      REMOTE_MONITORING: true
+    interval: 30s
+    labels:
+      environment: production
+    inventory_source: config/mysql
+

@@ -1,0 +1,9 @@
+<%- |   
+       String $log_file = '', 
+    | -%>
+
+logs:
+  - name: "mysql_errors"
+    file: <%= $log_file %>
+    attributes:
+      logtype: mysql-error

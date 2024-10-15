@@ -1,0 +1,30 @@
+<%- |   
+       String $username = '', 
+       String $service_name = '',
+       String $oracle_home = '',
+       String $is_sys_dba = '',
+       String $is_sys_oper = '',
+       Data   $password = '', 
+       String $port = '',
+    | -%>
+
+integrations:
+  - name: nri-oracledb
+    env:
+      SERVICE_NAME: <%= $service_name %>
+      HOSTNAME: localhost
+      PORT: <%= $port %>
+      USERNAME: <%= $username %>
+      PASSWORD: <%= $password %>
+      ORACLE_HOME: <%= $oracle_home %>
+      IS_SYS_DBA: <%= $is_sys_dba %>
+      IS_SYS_OPER: <%= $is_sys_oper %>
+      EXTENDED_METRICS: true
+      DISABLE_CONNECTION_POOL: false
+    interval: 15s
+    labels:
+      environment: production
+    inventory_source: config/oracledb
+
+
+

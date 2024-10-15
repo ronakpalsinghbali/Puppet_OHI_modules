@@ -1,0 +1,64 @@
+# This data is for MySQL
+eq_profile_mysql_observability::mysql_server_info:
+  mysql_server_version: 'testversion'
+  mysql_server_root_username: 'testusername'
+  mysql_server_root_password: 'testrootpassword'
+eq_profile_mysql_observability::newrelic_infra_integrations_files_test01_aws:
+  mysql-config.yml:
+    nri_mysql_user_key: 'testuserkey'
+    nri_mysql_user_secret: 'testusersecret'
+    nri_mysql_pass_key: 'testpasskey'
+    nri_mysql_pass_secret: 'testpasssecret'
+    nri_mysql_hostname: 'testhostname'
+eq_profile_mysql_observability::newrelic_mysql_user_credentials:
+  mysql_username: 'testnrusername'
+  mysql_password: 'testnrpassword'
+
+
+# This data is for OracleDB
+eq_profile_oracledb_observability::oracledb_server_info_test01_aws:
+  oracle_home: 'testhomepath'
+  oracledb_service_name: 'testservicename'
+eq_profile_oracledb_observability::oracledb_server_root_password_test01_aws: 'testoraclepassword'
+eq_profile_oracledb_observability::newrelic_infra_integrations_files_test01_aws:
+  oracledb-config.yml:
+    nri_oracledb_user_key: 'testuserkey'
+    nri_oracledb_user_secret: 'testusersecret'
+    nri_oracledb_pass_key: 'testpasskey'
+    nri_oracledb_pass_secret: 'testpasssecret'
+    oracledb_service_name: 'testservicename'
+    oracledb_hostname: 'testhostname'
+    oracledb_port: 'testport'
+    oracle_home: 'testhomepath'
+    is_sys_dba: 'false'
+    is_sys_oper: 'false'
+eq_profile_oracledb_observability::newrelic_oracledb_user_credentials_test01_aws:
+  oracledb_username: 'testoracleusername'
+  oracledb_password: 'testoraclepassword'
+
+
+
+
+# This data is for LINUX based JMX
+eq_profile_jmx_observability::newrelic_infra_integrations_files_test01_aws:
+  jmx-config.yml:
+    nri_jmx_user_key: 'NRuser'
+    nri_jmx_user_secret: 'LzYYGgs='
+    nri_jmx_pass_key: 'NRpass'
+    nri_jmx_pass_secret: 'LzYdCB0DLyEDFhwBKg=='
+    nri_jmx_port: 'testport'
+  jvm-metrics.yml:
+    nri_jmx_jvm_domain: 'java.lang'
+  tomcat-metrics.yml:
+    nri_jmx_tomcat_domain: 'Catalina'
+
+# This data is for Windows based JMX
+# eq_profile_jmx_observability::newrelic_infra_integrations_files_test01_aws:
+#   jmx-win-config.yml:
+#     nri_jmx_user_key: 'testuserkey'
+#     nri_jmx_user_secret: 'testusersecret'
+#     nri_jmx_pass_key: 'testpasskey'
+#     nri_jmx_pass_secret: 'testpasssecret'
+#     nri_jmx_port: 'testport'
+#   jvm-metrics.yml:
+#     nri_jmx_jvm_domain: 'java.lang'

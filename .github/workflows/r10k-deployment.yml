@@ -1,0 +1,20 @@
+name: r10k deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+          description: 'provide r10k deployment environment'
+          type: string
+          required: true
+
+jobs:
+  
+  r10k-deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: r10k deployment
+        run: sudo r10k deploy environment ${{ inputs.environment }}
+
